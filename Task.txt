@@ -1,2 +1,3 @@
 1] Prepare HTML layout
 2] Add CSS/ Use Bootstrap
+3] Add JS
