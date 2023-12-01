@@ -11,7 +11,7 @@ body {
 }
 
 .header {
-    border: 2px solid rgb(123, 121, 121);
+    border: 2px solid rgb(121, 122, 123);
     background-color: rgb(245, 245, 244);
     padding: 3%;
 }
@@ -26,7 +26,7 @@ body {
 
 .appBody {
     display: flex;
-    background-color: rgb(224, 222, 222);
+    background-color: #d1d9d9;
     padding: 3%;
     border: 2px solid rgb(123, 121, 121);
 }
@@ -69,6 +69,9 @@ body {
     padding: 0 2%;
     background-color: white;
     font: inherit;
+    overflow-y: auto;
+    margin-top: 2.5%;
+    max-height: 358px;
 }
 
 .footer{
@@ -83,17 +86,19 @@ body {
     margin: 0 2rem;
     cursor: pointer;
     border-radius: 8px;
-    width: 10rem;
+    width: 9rem;
 }
 
 #bookBtn{
     background-color: orange;
     color: white;
+    border: none;
 }
 #cancelBtn {
     background-color: white;
+    border: #b2b2b2 1px solid;
 }
 
 #bookingList {
-    overflow: scroll;
+    
 }
