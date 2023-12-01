@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookingApp Home</title>
+    <link href="../css/main.css" rel="stylesheet"></style>
+</head>
+<body>
+    <header class="header">
+        <h1 id="header_h1">Book Appointment</h1>
+        <p id="header_p">Book a call slot and our representative will call you within 1hr of selected time.</p>
+    </header>
+    <div class="appBody">
+        <div class="formContainer">
+            <form id="bookingForm">
+                <div class="form-control">
+                    <label for="username" class="label">Name</label><br>
+                    <input type="text" name="username" id="username" placeholder="Enter Name">
+                </div>
+                <div class="form-control">
+                    <label for="phone" class="label">Phone Number</label><br>
+                    <input type="text" name="phone" id="phone" placeholder="Enter Phone" pattern="[0-9]{10}">
+                </div>
+                <div class="form-control">
+                    <label for="email" class="label">Email Address</label><br>
+                    <input type="text" name="email" id="email" placeholder="Enter Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                </div>
+                <div class="form-control">
+                    <label for="date" class="label">Date for call</label><br>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div class="form-control">
+                    <label for="time" class="label">Time for call</label><br>
+                    <input type="time" name="time" id="time">
+                </div>
+            </form>
+        </div>
+        <div class="bookingContainer">
+            <p>Slots Booked Currently: </p>
+            <ul id="bookingList">
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <button name="cancel" id="cancelBtn" class="button">CANCEL</button>
+        <button name="book" id="bookBtn" class="button">BOOK NOW</button>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="../JS/main.js" rel="javascript"></script>
+</body>
+</html>

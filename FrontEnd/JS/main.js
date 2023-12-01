@@ -1,8 +1,71 @@
-const name = document.getElementById('name');
+const name = document.getElementById('username');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const date = document.getElementById('date');
 const time = document.getElementById('time');
+
+const cancelBtn = document.getElementById('cancelBtn');
+const bookBtn = document.getElementById('bookBtn');
+
+const bookingList = document.getElementById('bookingList');
+//--------------------------------------------------------------------------------------------------
+
+cancelBtn.addEventListener('click', clearForm);
+bookBtn.addEventListener('click', submitForm);
+
+document.addEventListener('DOMContentLoaded', refreshBookings);
+
+function clearForm(e) {
+    name.value = '';
+    email.value = '';
+    phone.value = '';
+    date.value = '';
+    time.value = '';
+};
+
+function submitForm(e) {
+    e.preventDefault();
+
+    if(name.value == '' || phone.value == '' || email.value == '' || date.value == '' || time.value == ''){
+        alert('Kindly fill all the fields');
+    }
+    else{
+        let booking = {
+            Bname : name.value,
+            Bemail : email.value,
+            Bphone : phone.value,
+            Bdate : date.value,
+            Btime : time.value
+        };
+        axios.post('localhost:3000', booking)
+            .then(result => {
+                //add booking to list
+                showBooking(result);
+            })
+            .catch(err => alert('Something went wrong: ',err));
+    }
+    name.value = '';
+    email.value = '';
+    phone.value = '';
+    date.value = '';
+    time.value = '';
+
+};
+
+function refreshBookings(){
+    axios.get('localhost:3000')
+    .then(response => {showOutput(response)})
+    .catch(err=>{
+        alert('Something went wrong: ',err);
+    })
+}
+
+function showBooking(result){
+
+}
+
+
+
 
 
 const msg = document.getElementById('msg');
@@ -14,13 +77,13 @@ const btn = document.getElementById('submitButton');
 
 
 
-btn.addEventListener('mouseover', (e)=>{
-    btn.style.backgroundColor = 'blue';
-});
+// btn.addEventListener('mouseover', (e)=>{
+//     btn.style.backgroundColor = 'blue';
+// });
 
-btn.addEventListener('mouseout', (e)=>{
-    btn.style.backgroundColor = 'orange';
-});
+// btn.addEventListener('mouseout', (e)=>{
+//     btn.style.backgroundColor = 'orange';
+// });
 
 document.addEventListener('DOMContentLoaded', refreshBookings);
 
@@ -135,22 +198,12 @@ function alterBookings(e){
 
 function refreshBookings(){
 
-    axios.get('https://crudcrud.com/api/0ab6f559e4c64d13b8f0bb3cc11f3b3f/bookingApp')
-    .then(response => {showOutput(response)})
-    .catch(()=>{
-        msg.innerText = 'Something went wrong while refreshing data!!';
-        setTimeout(() => { 
-            msg.classList.remove('error'); 
-            msg.innerText = '';
-        }, 3000);
-    })
+
 }
 
 
 
 function showOutput(res){
-    console.log(res);
-    console.log(res.data[2]);
 
     for(let i=0; i< res.data.length; i++){
         let obj = res.data[i];

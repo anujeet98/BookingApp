@@ -1,0 +1,99 @@
+
+body {
+    margin: 10%;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    backdrop-filter: blur(100px); 
+    font-family: sans-serif;
+}
+
+.header {
+    border: 2px solid rgb(123, 121, 121);
+    background-color: rgb(245, 245, 244);
+    padding: 3%;
+}
+
+#header_h1 {
+    margin: 0;
+}
+
+#header_p {
+    margin: 0;
+}
+
+.appBody {
+    display: flex;
+    background-color: rgb(224, 222, 222);
+    padding: 3%;
+    border: 2px solid rgb(123, 121, 121);
+}
+
+.formContainer {
+    width: 20rem;
+}
+
+.form-control{
+    margin: 1rem 0;
+}
+
+
+.form-controlr label,
+.form-control input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  /* margin: 1% 0%; */
+}
+
+.form-control input {
+  border: 1px solid #a1a1a1;
+  font: inherit;
+  padding: 5%;
+}
+.form-control label {
+    font-weight: bold;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  outline-color: #00695c;
+}
+
+.bookingContainer{
+    border: 2px solid rgb(175, 172, 172);  
+    width: 100%;
+    margin-left: 5%;
+    padding: 0 2%;
+    background-color: white;
+    font: inherit;
+}
+
+.footer{
+    border: 2px solid rgb(123, 121, 121);
+    padding: 3%;
+    text-align: center;
+    background-color: rgb(245, 245, 244);
+}
+
+.button{
+    padding: 2% 3%;
+    margin: 0 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 10rem;
+}
+
+#bookBtn{
+    background-color: orange;
+    color: white;
+}
+#cancelBtn {
+    background-color: white;
+}
+
+#bookingList {
+    overflow: scroll;
+}
